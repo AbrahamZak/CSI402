@@ -1,0 +1,37 @@
+#!/bin/bash
+#check if there are 0 arguments
+if [ $# -eq 0 ]  
+    then
+    #if true then print the following
+    echo "Usage: task4 1 DIRECTORY, OR task4 2 FILE"
+    echo
+    echo "Description: 1. List the files in the INPUT folder where the filenames contain one (and only one) hyphen (-)."
+    echo "Description: 2. Find and print lines in INPUT file which have bad punctuation: a space character (e.g., space or tab) before dot (.) or comma (,) punctuation marks."
+    #when done printing, exit 
+    exit 1
+ fi  
+#If the user wants to print files that contain 1 hyphen
+if [ $1 -eq 1 ]
+     then
+     #Use find command to get all files in user specified folder, use grep to get all files with hyphens, then use grep again to filter all matches with >1 hyphen. 
+     find $2 -type f | grep "-" | grep -v '\-.*\-'
+     exit 1
+     fi
+#If the user wants to print all lines in a file with punctuation mistakes
+if [ $1 -eq 2 ]
+     then
+     #Let the user know what we're doing
+     echo "Outputting all punctuation mistakes:"
+     echo
+     echo "Space or tab before a comma:"
+     echo
+     #Use grep to find all lines with spaces or tabs before commas
+     grep '\s,' $2
+     echo
+     echo "Space or tab before a period:"
+     echo
+     #Use grep to find all lines with spaces or tabs before periods, the extra \ is because . needs an escape to be recognized.
+     grep '\s\.' $2
+     exit 1
+     fi
+
