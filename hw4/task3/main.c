@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     numberlen = read_numbers(numbers, NUMBER_COUNT_MAX);
     
     if (numberlen==0){
-        printf("no input numbers");
+        printf("no input numbers\n");
         return 0;
     }
     //Permute the array
@@ -38,6 +38,7 @@ int main(int argc, char *argv[]) {
             printf("%d ", numbers[i]);
         }
 }
+    printf("\n");
      return 0;
 }
 

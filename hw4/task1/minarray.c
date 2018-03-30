@@ -36,11 +36,11 @@ int main(int argc, char *argv[]) {
     numberlen = read_numbers(numbers, NUMBER_COUNT_MAX, &min);
     //If we have no inputs
     if (numberlen == 0){
-        printf("no input numbers");
+        printf("no input numbers\n");
     }
     //Otherwise print the min
     else{
-    printf("%d", min);
+    printf("%d\n", min);
     }
     return 0;
 }

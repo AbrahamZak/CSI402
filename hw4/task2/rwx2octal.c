@@ -32,7 +32,7 @@ int main(int argc, const char * argv[]) {
         }
         //If there is no r or - we exit the program
         else{
-            printf("invalid permission");
+            printf("invalid permission\n");
             exit(1);
         }
         //If the second character is w or - we process it
@@ -44,7 +44,7 @@ int main(int argc, const char * argv[]) {
         }
         //If there is no w or - we exit the program
         else{
-            printf("invalid permission");
+            printf("invalid permission\n");
             exit(1);
         }
         //If the third character is x or - we process it
@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
         }
         //If there is no x or - we exit the program
         else{
-            printf("invalid permission");
+            printf("invalid permission\n");
             exit(1);
         }
         //Add final octal to our array and reset the count int for our next set
@@ -64,6 +64,6 @@ int main(int argc, const char * argv[]) {
         count = 0;
     }
     //Print the final octal
-    printf ("%d%d%d", totals[0], totals[1], totals[2]);
+    printf ("%d%d%d\n", totals[0], totals[1], totals[2]);
     return 0;
 }
